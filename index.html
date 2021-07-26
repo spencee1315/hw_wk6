@@ -16,85 +16,72 @@
     <script src="https://kit.fontawesome.com/d5e3f9b5d5.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <header>
-        <h1>Weather Dashboard</h1>
-    </header>
+      
+    <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1 w-100 text-center">Weather Dashboard</span>
+    </nav>
 
-    <main>
-        <aside>
-            <h3>Search for a City</h3>
-            <div id="search-box">
-                <input type="search" id="city-search-input">
-                <input type="submit" id="city-search-button">
-            </div>
-            <div id="city-list"></div>
-        </aside>
-        <div class="content">
-            <div id="weather-info">
-                <div id="units">
-                    Metric
-                    <label class="switch">
-                        <input id="unit-switch" type="checkbox">
-                        <span class="slider"></span>
-                    </label>
-                    Imperial
+    <div class="container">
+        <div class="row">
+            <div class="col-4 bg-light">
+                <p class="search-header my-1">Search for a city</p>
+                <div class="input-group mb-3">
+                    <input id="city-input" type="text" class="form-control" placeholder="Enter city name" aria-label="Enter city name">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" id="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
                 </div>
-                <h2 id="city-name-display"></h2>
-                <h3 id="date-display"></h3>
-                <img id="current-weather-icon">
-                <div id="current-weather"></div>
-                <div>Temperature: <span id="current-temperature"></span></div>
-                <div>Humidity: <span id="current-humidity"></span></div>
-                <div>Wind Speed: <span id="current-wind-speed"></span></div>
-                <div>UV Index: <span id="current-uvi"></span></div>
+                <button class="btn btn-primary mb-3" type="button" id="clear-history">Clear history</button>
+                <form id="history"></form>
             </div>
-            
-            <div id="five-day-forcast">
-                <h3>5-Day Forcast:</h3>
-                <div id="forcast-list">
-                    <span id="forcast-day-1" class="forcast-card">
-                        <div class="forcast-day-of-week"></div>
-                        <div class="forcast-date"></div>
-                        <img class="forcast-icon">
-                        <div class="forcast-temp"></div>
-                        <div class="forcast-humidity"></div>
-                    </span>
-
-                    <span id="forcast-day-2" class="forcast-card">
-                        <div class="forcast-day-of-week"></div>
-                        <div class="forcast-date"></div>
-                        <img class="forcast-icon">
-                        <div class="forcast-temp"></div>
-                        <div class="forcast-humidity"></div>
-                    </span>
-
-                    <span id="forcast-day-3" class="forcast-card">
-                        <div class="forcast-day-of-week"></div>
-                        <div class="forcast-date"></div>
-                        <img class="forcast-icon">
-                        <div class="forcast-temp"></div>
-                        <div class="forcast-humidity"></div>
-                    </span>
-
-                    <span id="forcast-day-4" class="forcast-card">
-                        <div class="forcast-day-of-week"></div>
-                        <div class="forcast-date"></div>
-                        <img class="forcast-icon">
-                        <div class="forcast-temp"></div>
-                        <div class="forcast-humidity"></div>
-                    </span>
-
-                    <span id="forcast-day-5" class="forcast-card">
-                        <div class="forcast-day-of-week"></div>
-                        <div class="forcast-date"></div>
-                        <img class="forcast-icon">
-                        <div class="forcast-temp"></div>
-                        <div class="forcast-humidity"></div>
-                    </span>
+            <div class="col-8">
+                <div class="row mr-0">
+                    <div class="col-12 border border-dark m-3 rounded">
+                        <div class="row">
+                            <div class="col-12">
+                                <span id="city-name" class="city-name align-middle"></span>
+                                <img id="current-pic" src="placeholder" alt="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <p id="temperature"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <p id="humidity"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <p id="wind-speed"></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 d-flex">
+                                <p id="UV-index"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h3>5-Day Forecast</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
+                    <div class="col forecast bg-primary text-white ml-3 mb-3 rounded"></div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

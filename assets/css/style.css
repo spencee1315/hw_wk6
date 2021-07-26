@@ -6,174 +6,25 @@
     font-size: 70%;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  background-color: #666;
-  color: #eee;
+.navbar-brand {
+    font-size: 2.5rem;
 }
 
-main {
-  display: flex;
-  flex-wrap: wrap;
+.search-header {
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
-main aside {
-  margin-right: 1rem;
-  padding: 0.5rem;
+.city-name {
+    font-size: 1.875rem;
 }
 
-main aside #city-search-input {
-  padding: 0.25rem;
-}
-
-main aside #city-list {
-  margin-top: 1rem;
-}
-
-main aside #city-list .city-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #eee;
-  padding: 0.25rem 0.5rem;
-  cursor: pointer;
-  border-left: 4px solid #eee;
-  transition: border-color 0.35s;
-}
-
-main aside #city-list .city-item::before {
-  content: attr(data-name);
-}
-
-main aside #city-list .city-item:not(:first-child) {
-  margin-top: 0.35rem;
-}
-
-main aside #city-list .city-item:focus, main aside #city-list .city-item:hover {
-  outline: none;
-  border-left: 4px solid #336785;
-}
-
-main aside #city-list .city-item button {
-  border: none;
-  font-size: 1.5rem;
-  padding: 0 0.35rem;
-  cursor: pointer;
-  transition: background-color 0.35s;
-}
-
-main aside #city-list .city-item button::before {
-  content: '×';
-}
-
-main aside #city-list .city-item button:focus, main aside #city-list .city-item button:hover {
-  outline: none;
-  background-color: #bbb;
-}
-
-main .content {
-  flex: 1 0 auto;
-  position: relative;
-  padding: 0.5rem;
-  max-width: 100%;
-}
-
-main .content #weather-info {
-  position: relative;
-  border: 1px solid black;
-  padding: 0.75rem;
-  border-radius: 0.25rem;
-  line-height: 1.75;
-}
-
-main .content #weather-info #city-name-display {
-  line-height: 0.8;
-  margin: 0;
-}
-
-main .content #weather-info #units {
-  position: absolute;
-  right: 0.5rem;
-  top: 0.5rem;
-  display: flex;
-  align-items: center;
-}
-
-main .content #weather-info #current-uvi {
-  padding: 0 0.25rem;
-}
-
-main .content #five-day-forcast h3 {
-  margin: 0.5rem 1rem;
-}
-
-main .content #five-day-forcast #forcast-list {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: stretch;
-}
-
-main .content #five-day-forcast #forcast-list .forcast-card {
-  display: inline-block;
-  margin: 0 0.5rem;
-  padding: 0.5rem;
-  width: calc(20% - 2rem - 2px);
-  min-height: 100px;
-  border: 1px solid black;
-  border-radius: 0.5rem;
-  text-align: center;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 36px;
-  height: 20px;
-  margin: 0 0.35rem;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.switch input:checked + .slider {
-  background-color: #aaa;
-}
-
-.switch input:checked + .slider:before {
-  transform: translate(100%, -50%);
-}
-
-.switch .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-  border-radius: 20px;
-}
-
-.switch .slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  left: 2px;
-  top: 50%;
-  transform: translate(0, -50%);
-  background-color: white;
-  transition: .4s;
-  border-radius: 50%;
+.forecast-date {
+    font-size: 1.25rem;
 }
 
 /* Modified for different screensizes */
-@charset "UTF-8";
+/* @charset "UTF-8";
 @media screen and (max-width: 960px) {
   aside {
     width: 100%;
@@ -214,4 +65,4 @@ main .content #five-day-forcast #forcast-list .forcast-card {
     width: 100% !important;
     margin: 0.25rem 0 !important;
   }
-}
+} */

@@ -22,7 +22,7 @@ function initPage() {
       .then(function(response){
           console.log(response);
 //  Parse response to display current conditions
-      //  Method for using "date" objects obtained from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+//        Method for using "date" objects obtained from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
           const currentDate = new Date(response.data.dt*1000);
           console.log(currentDate);
           const day = currentDate.getDate();
@@ -101,7 +101,7 @@ function initPage() {
       historyEl.innerHTML = "";
       for (let i=0; i<searchHistory.length; i++) {
           const historyItem = document.createElement("input");
-          // <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"></input>
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"></input>
           historyItem.setAttribute("type","text");
           historyItem.setAttribute("readonly",true);
           historyItem.setAttribute("class", "form-control d-block bg-white");

@@ -16,7 +16,7 @@
 }
 
 /* Modified for different screensizes */
-@charset "UTF-8";
+/* @charset "UTF-8";
 @media screen and (max-width: 960px) {
   aside {
     width: 100%;
@@ -57,4 +57,4 @@
     width: 100% !important;
     margin: 0.25rem 0 !important;
   }
-}
+} */

@@ -5,16 +5,17 @@ function initPage() {
   const nameEl = document.getElementById("city-name");
   const currentPicEl = document.getElementById("current-pic");
   const currentTempEl = document.getElementById("temperature");
-  const currentHumidityEl = document.getElementById("humidity");
+  const currentHumidityEl = document.getElementById("humidity");4
   const currentWindEl = document.getElementById("wind-speed");
   const currentUVEl = document.getElementById("UV-index");
   const historyEl = document.getElementById("history");
   let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
   console.log(searchHistory);
+  
 
   const APIKey = "6062ba2eac804d80dff372de3b8b70e8";
-  
 //  When search button is clicked, read the city name typed by the user
+
   function getWeather(cityName) {
 //  Using saved city name, execute a current condition get request from open weather map api
       let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
@@ -22,7 +23,7 @@ function initPage() {
       .then(function(response){
           console.log(response);
 //  Parse response to display current conditions
-//        Method for using "date" objects obtained from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+      //  Method for using "date" objects obtained from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
           const currentDate = new Date(response.data.dt*1000);
           console.log(currentDate);
           const day = currentDate.getDate();
@@ -62,19 +63,19 @@ function initPage() {
               const forecastMonth = forecastDate.getMonth() + 1;
               const forecastYear = forecastDate.getFullYear();
               const forecastDateEl = document.createElement("p");
-                forecastDateEl.setAttribute("class","mt-3 mb-0 forecast-date");
-                forecastDateEl.innerHTML = forecastMonth + "/" + forecastDay + "/" + forecastYear;
-                forecastEls[i].append(forecastDateEl);
+              forecastDateEl.setAttribute("class","mt-3 mb-0 forecast-date");
+              forecastDateEl.innerHTML = forecastMonth + "/" + forecastDay + "/" + forecastYear;
+              forecastEls[i].append(forecastDateEl);
               const forecastWeatherEl = document.createElement("img");
-                forecastWeatherEl.setAttribute("src","https://openweathermap.org/img/wn/" + response.data.list[forecastIndex].weather[0].icon + "@2x.png");
-                forecastWeatherEl.setAttribute("alt",response.data.list[forecastIndex].weather[0].description);
-                forecastEls[i].append(forecastWeatherEl);
+              forecastWeatherEl.setAttribute("src","https://openweathermap.org/img/wn/" + response.data.list[forecastIndex].weather[0].icon + "@2x.png");
+              forecastWeatherEl.setAttribute("alt",response.data.list[forecastIndex].weather[0].description);
+              forecastEls[i].append(forecastWeatherEl);
               const forecastTempEl = document.createElement("p");
-                forecastTempEl.innerHTML = "Temp: " + k2f(response.data.list[forecastIndex].main.temp) + " &#176F";
-                forecastEls[i].append(forecastTempEl);
+              forecastTempEl.innerHTML = "Temp: " + k2f(response.data.list[forecastIndex].main.temp) + " &#176F";
+              forecastEls[i].append(forecastTempEl);
               const forecastHumidityEl = document.createElement("p");
-                forecastHumidityEl.innerHTML = "Humidity: " + response.data.list[forecastIndex].main.humidity + "%";
-                forecastEls[i].append(forecastHumidityEl);
+              forecastHumidityEl.innerHTML = "Humidity: " + response.data.list[forecastIndex].main.humidity + "%";
+              forecastEls[i].append(forecastHumidityEl);
               }
           })
       });  
@@ -101,7 +102,7 @@ function initPage() {
       historyEl.innerHTML = "";
       for (let i=0; i<searchHistory.length; i++) {
           const historyItem = document.createElement("input");
-          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"></input>
+          // <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"></input>
           historyItem.setAttribute("type","text");
           historyItem.setAttribute("readonly",true);
           historyItem.setAttribute("class", "form-control d-block bg-white");
@@ -117,6 +118,7 @@ function initPage() {
   if (searchHistory.length > 0) {
       getWeather(searchHistory[searchHistory.length - 1]);
   }
+
 
 //  Save user's search requests and display them underneath search form
 //  When page loads, automatically generate current conditions and 5-day forecast for the last city the user searched for
